@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import SignupForm from '../Components/SignupForm/SignupForm';
 import { createUser } from '../services/userAPI';
+import SignupForm from '../Components/SignupForm/SignupForm';
 import Loading from '../Components/Loading/Loading';
 
 class Login extends Component {
@@ -9,6 +9,7 @@ class Login extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRender = this.handleRender.bind(this);
     this.state = {
       name: '',
       loading: false,
@@ -29,19 +30,26 @@ class Login extends Component {
     });
   }
 
+  // Não parece ser um nome muito bom
+  handleRender() {
+    const { name, loading } = this.state;
+    if (loading) {
+      return <Loading />;
+    }
+    return (
+      <SignupForm
+        handleChange={ this.handleChange }
+        handleSubmit={ this.handleSubmit }
+        name={ name }
+      />
+    );
+  }
+
   render() {
-    const { name, loading, redirect } = this.state;
+    const { redirect } = this.state;
     return (
       <div data-testid="page-login">
-        {loading ? (
-          <Loading />
-        ) : (
-          <SignupForm
-            handleChange={ this.handleChange }
-            handleSubmit={ this.handleSubmit }
-            name={ name }
-          />
-        )}
+        {this.handleRender()}
         {redirect ? <Redirect to="/search" /> : null}
       </div>
     );
