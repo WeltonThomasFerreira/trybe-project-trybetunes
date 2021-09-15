@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getUser } from '../../services/userAPI';
 import Loading from '../Loading/Loading';
+import Navigator from '../Navigator/Navigator';
 
 class Header extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Header extends Component {
     return (
       <header data-testid="header-component">
         <h1>TrybeTunes</h1>
+        <Navigator />
         {loading ? <Loading /> : userName}
       </header>
     );
