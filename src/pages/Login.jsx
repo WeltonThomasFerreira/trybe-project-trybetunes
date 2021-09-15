@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
-import Form from '../Components/Form/Form';
+import SignupForm from '../Components/SignupForm/SignupForm';
 import Loading from '../Components/Loading/Loading';
 
 class Login extends Component {
@@ -37,7 +37,7 @@ class Login extends Component {
       return <Loading />;
     }
     return (
-      <Form
+      <SignupForm
         handleChange={ this.handleChange }
         handleSubmit={ this.handleSubmit }
         name={ name }
