@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-function SubmitButton(props) {
-  const { testId, disabled } = props;
-  return (
-    <button disabled={ disabled } type="submit" data-testid={ testId }>
-      Entrar
-    </button>
-  );
+class SubmitButton extends Component {
+  render() {
+    const { testId, disabled } = this.props;
+    return (
+      <button disabled={ disabled } type="submit" data-testid={ testId }>
+        Entrar
+      </button>
+    );
+  }
 }
 
 SubmitButton.propTypes = {

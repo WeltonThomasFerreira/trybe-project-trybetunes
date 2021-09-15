@@ -12,7 +12,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>TrybeTunes</p>
         <Router>
           <Switch>
             <Route path="/Profile/edit" component={ ProfileEdit } />
