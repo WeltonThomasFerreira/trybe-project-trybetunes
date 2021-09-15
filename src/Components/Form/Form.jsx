@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SubmitButton from '../SubmitButton/SubmitButton';
 
-class SignupForm extends Component {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.validade = this.validate.bind(this);
@@ -18,27 +18,29 @@ class SignupForm extends Component {
     const { handleChange, handleSubmit, name } = this.props;
     return (
       <form onSubmit={ handleSubmit }>
-        <label htmlFor="name">
-          Nome
-          <input
-            id="name"
-            name="name"
-            type="text"
-            onChange={ handleChange }
-            value={ name }
-            data-testid="login-name-input"
-          />
-        </label>
-        <SubmitButton testId="login-submit-button" disabled={ this.validate() } />
+        <input
+          placeholder="Name"
+          id="name"
+          name="name"
+          type="text"
+          onChange={ handleChange }
+          value={ name }
+          data-testid="login-name-input"
+        />
+        <SubmitButton
+          testId="login-submit-button"
+          disabled={ this.validate() }
+          text="Entrar"
+        />
       </form>
     );
   }
 }
 
-SignupForm.propTypes = {
+Form.propTypes = {
   name: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };
 
-export default SignupForm;
+export default Form;

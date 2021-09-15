@@ -29,9 +29,8 @@ class Header extends Component {
     const userName = <h1 data-testid="header-user-name">{name}</h1>;
     return (
       <header data-testid="header-component">
-        <h1>TrybeTunes</h1>
-        <Navigator />
         {loading ? <Loading /> : userName}
+        <Navigator />
       </header>
     );
   }
