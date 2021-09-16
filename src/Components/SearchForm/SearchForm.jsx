@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SubmitButton from '../SubmitButton/SubmitButton';
+import Loading from '../Loading/Loading';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -15,7 +16,10 @@ class SearchForm extends Component {
   }
 
   render() {
-    const { handleChange, handleSubmit, name } = this.props;
+    const { handleChange, handleSubmit, name, loading } = this.props;
+    if (loading) {
+      return <Loading />;
+    }
     return (
       <form onSubmit={ handleSubmit }>
         <input
@@ -41,6 +45,7 @@ SearchForm.propTypes = {
   name: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default SearchForm;
