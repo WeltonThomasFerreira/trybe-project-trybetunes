@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class AlbumCard extends Component {
@@ -14,11 +14,9 @@ class AlbumCard extends Component {
     } = this.props;
     return (
       <div>
-        <Router>
-          <Link to={ `/album/${id}` } data-testid={ `link-to-album-${id}` }>
-            <img src={ cover } alt="" />
-          </Link>
-        </Router>
+        <Link to={ `/album/${id}` } data-testid={ `link-to-album-${id}` }>
+          <img src={ cover } alt="" />
+        </Link>
         <p>{albumName}</p>
         <p>{artistName}</p>
       </div>

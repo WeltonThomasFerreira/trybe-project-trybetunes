@@ -17,7 +17,7 @@ class App extends Component {
             <Route path="/Profile/edit" component={ ProfileEdit } />
             <Route path="/Profile" component={ Profile } />
             <Route path="/favorites" component={ Favorites } />
-            <Route path="/album" component={ Album } />
+            <Route path="/album/:id" component={ Album } />
             <Route path="/search" component={ Search } />
             <Route exact path="/" component={ Login } />
             <Route path="*" component={ NotFound } />
