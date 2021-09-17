@@ -21,11 +21,10 @@ class MusicCard extends Component {
 }
 
 MusicCard.propTypes = {
-  music: PropTypes.shape(PropTypes.string),
-};
-
-MusicCard.defaultProps = {
-  music: {},
+  music: PropTypes.shape({
+    trackName: PropTypes.string,
+    previewUrl: PropTypes.string,
+  }).isRequired,
 };
 
 export default MusicCard;
