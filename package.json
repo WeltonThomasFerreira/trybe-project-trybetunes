@@ -2,7 +2,6 @@
   "name": "trybetunes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://weltonthomasferreira.github.io/trybe-project-trybetunes",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -21,7 +20,7 @@
     "lint:styles": "npx stylelint '**/*.css'",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
