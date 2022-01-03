@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Search from './pages/Search';
 import Album from './pages/Album';
@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
+        <Router basename="/trybe-project-trybetunes">
           <Switch>
             <Route path="/Profile/edit" component={ ProfileEdit } />
             <Route path="/Profile" component={ Profile } />
